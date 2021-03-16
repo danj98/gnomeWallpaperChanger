@@ -24,7 +24,7 @@ def getWeather():
 	"""
 	Gets current weather from OWN data, i.e "Clouds"
 	"""
-	owm = OWM("2e17a4229ccfbd3e5a13a8c5b26954bb")
+	owm = OWM("TOKEN HERE")
 	mgr = owm.weather_manager()
 	observation = mgr.weather_at_place('Bergen,NO')
 	weather = observation.weather
