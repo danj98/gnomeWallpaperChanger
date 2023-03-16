@@ -26,7 +26,7 @@ def getWeather():
 	"""
 	owm = OWM("TOKEN HERE")
 	mgr = owm.weather_manager()
-	observation = mgr.weather_at_place('Bergen,NO')
+	observation = mgr.weather_at_place("LOCATION")
 	weather = observation.weather
 	return weather.status
 
@@ -37,7 +37,21 @@ def getTime():
 	"""
 	return datetime.now().hour
 
+# Add you own images as filepath:
+rain_morning = "folder/example.jpg"
+rain_afternoon = ""
+rain_evening = ""
+rain_night = ""
 
+clear_morning = ""
+clear_afternoon = ""
+clear_evening = ""
+clear_night = ""
+
+clouds_morning = ""
+clouds_afternoon = ""
+clouds_evening = ""
+clouds_night = ""
 
 def setWallpaper(time, weather):
 	"""
@@ -47,33 +61,33 @@ def setWallpaper(time, weather):
 
 	if weather == "Rain" or weather == "Snow":
 		if time >= 6 and time < 12:
-			pic = "rain-morning.jpeg"
+			pic = rain_morning
 		elif time >= 12 and time < 18:
-			pic = "rain-afternoon.jpg"
+			pic = rain_afternoon
 		elif time >= 18 and time < 22:
-			pic = "rain-evening.jpg"
+			pic = rain_evening
 		else:
-			pic = "rain-night.jpg"
+			pic = rain_night
 
 	if weather == "Clear":
 		if time >= 6 and time < 12:
-			pic = "clear-morning.jpg"
+			pic = clear_morning
 		elif time >= 12 and time < 18:
-			pic = "clear-afternoon.jpg"
+			pic = clear_afternoon
 		elif time >= 18 and time < 22:
-			pic = "clear-evening.jpg"
+			pic = clear_evening
 		else:
-			pic = "clear-night.jpg"
+			pic = clear_night
 
 	if weather == "Clouds":
 		if time >= 6 and time < 12:
-			pic = "cloud-morning.jpg"
+			pic = cloud_morning
 		elif time >= 12 and time < 18:
-			pic = "cloud-afternoon.jpg"
+			pic = cloud_afternoon
 		elif time >= 18 and time < 22:
-			pic = "cloud-evening.jpg"
+			pic = cloud_evening
 		else:
-			pic = "cloud-night.jpg"
+			pic = cloud_night
 
 	return pic
 
